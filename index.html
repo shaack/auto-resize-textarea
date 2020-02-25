@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>auto-resize-textarea</title>
+</head>
+<body>
+<h1>auto-resize-textarea</h1>
+<form>
+    <div>
+        <label for="textarea1">No attributes</label><br/>
+        <textarea id="textarea1" class="auto-resize"></textarea><br/>
+    </div>
+    <div>
+        <label for="textarea2">rows and cols set</label><br/>
+        <textarea id="textarea2" rows="2" cols="20" class="auto-resize"></textarea><br/>
+    </div>
+    <div>
+        <label for="textarea3">padding and cols and rows set</label><br/>
+        <textarea id="textarea3" style="padding: 10px" rows="2" cols="20" class="auto-resize"></textarea>
+    </div>
+    <div>
+        <label for="textarea4">width and height set</label><br/>
+        <textarea id="textarea4" style="padding: 10px; width: 280px; height: 30px;" rows="2" cols="10" class="auto-resize"></textarea>
+    </div>
+    <div>
+        <label for="textarea5">one row initial</label><br/>
+        <textarea id="textarea5" rows="1" cols="40" class="auto-resize"></textarea><br/>
+    </div>
+</form>
+<script src="src/auto-resize-textarea.js"></script>
+<script>
+    autoResizeTextarea(document.querySelectorAll("textarea.auto-resize"))
+</script>
+</body>
+</html>
