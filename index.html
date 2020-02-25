@@ -24,7 +24,8 @@
     </div>
     <div>
         <label for="textarea4">width and height set</label><br/>
-        <textarea id="textarea4" style="padding: 10px; width: 280px; height: 30px;" rows="2" cols="10" class="auto-resize"></textarea>
+        <textarea id="textarea4" style="padding: 10px; width: 280px; height: 30px;" rows="2" cols="10"
+                  class="auto-resize"></textarea>
     </div>
     <div>
         <label for="textarea5">one row initial</label><br/>
@@ -33,7 +34,7 @@
 </form>
 <script src="src/auto-resize-textarea.js"></script>
 <script>
-    autoResizeTextarea(document.querySelectorAll("textarea.auto-resize"))
+    autoResizeTextarea(document.querySelectorAll("textarea.auto-resize"), {maxHeight: 120})
 </script>
 </body>
 </html>

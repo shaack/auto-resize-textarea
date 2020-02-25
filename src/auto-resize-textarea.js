@@ -17,7 +17,6 @@ var autoResizeTextarea = function (querySelector, options) {
     }
 
     function updateElement(element) {
-        element.style.borderColor = "red"
         var newHeight = element.autoResizeTextarea.initialHeight + element.scrollHeight - element.autoResizeTextarea.initialScrollHeight
         console.log("newHeight", element.autoResizeTextarea.initialHeight, element.scrollHeight, element.autoResizeTextarea.initialScrollHeight, newHeight)
         if (newHeight <= config.maxHeight) {
