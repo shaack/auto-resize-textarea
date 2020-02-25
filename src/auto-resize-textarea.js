@@ -18,7 +18,6 @@ var autoResizeTextarea = function (querySelector, options) {
 
     function updateElement(element) {
         var newHeight = element.autoResizeTextarea.initialHeight + element.scrollHeight - element.autoResizeTextarea.initialScrollHeight
-        console.log("newHeight", element.autoResizeTextarea.initialHeight, element.scrollHeight, element.autoResizeTextarea.initialScrollHeight, newHeight)
         if (newHeight <= config.maxHeight) {
             element.style.height = newHeight + "px"
         }
@@ -28,10 +27,6 @@ var autoResizeTextarea = function (querySelector, options) {
         element.autoResizeTextarea = {}
         element.autoResizeTextarea.initialHeight = elementHeight(element)
         element.autoResizeTextarea.initialScrollHeight = parseFloat(element.scrollHeight)
-
-        console.log(element, element.autoResizeTextarea)
-
-        // updateElement(element)
         element.addEventListener("input", function () {
             updateElement(element)
         })
