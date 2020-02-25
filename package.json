@@ -1,0 +1,25 @@
+{
+  "name": "@shaack/auto-resize-textarea",
+  "version": "1.0.1",
+  "description": "Auto resizing textareas, can be used with bootstrap",
+  "main": "index.html",
+  "scripts": {
+    "test": "index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaack/auto-resize-textarea.git"
+  },
+  "keywords": [
+    "html",
+    "textarea",
+    "widget",
+    "bootstrap"
+  ],
+  "author": "shaack.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shaack/auto-resize-textarea/issues"
+  },
+  "homepage": "https://github.com/shaack/auto-resize-textarea#readme"
+}
