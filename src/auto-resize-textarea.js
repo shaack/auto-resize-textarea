@@ -17,18 +17,18 @@ var autoResizeTextarea = function (querySelector, options) {
     }
 
     function updateElement(element) {
-        if(!element.autoResizeTextarea.initialHeight) {
-            element.autoResizeTextarea.initialHeight = elementHeight(element)
-            element.autoResizeTextarea.initialScrollHeight = parseFloat(element.scrollHeight)
-        }
+        element.style.height = "0"
         var newHeight = element.autoResizeTextarea.initialHeight + element.scrollHeight - element.autoResizeTextarea.initialScrollHeight
-        if (newHeight <= config.maxHeight) {
-            element.style.height = newHeight + "px"
-        }
+        newHeight = Math.max(newHeight, element.autoResizeTextarea.initialHeight)
+        element.style.height = Math.min(newHeight, config.maxHeight) + "px"
     }
 
     function forEachElement(element) {
         element.autoResizeTextarea = {}
+        element.autoResizeTextarea.initialHeight = elementHeight(element)
+        element.autoResizeTextarea.initialScrollHeight = parseFloat(element.scrollHeight)
+        element.style.height = element.autoResizeTextarea.initialHeight + "px"
+        // updateElement(element)
         element.addEventListener("input", function () {
             updateElement(element)
         })
