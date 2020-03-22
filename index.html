@@ -9,29 +9,63 @@
 </head>
 <body>
 <h1>auto-resize-textarea</h1>
+
+<p>Auto resizes the height of any &lt;textarea&gt;.</p>
+
+<ul>
+    <li>No dependencies (don't needs jQuery)</li>
+    <li>Works with Bootstrap</li>
+</ul>
+
+<h2>Try and get it</h2>
+<ul>
+    <li><a href="https://shaack.com/projekte/auto-resize-textarea/">Demo page</a></li>
+    <li><a href="https://github.com/shaack/auto-resize-textarea">GitHub repository</a></li>
+</ul>
+
+<h2>Examples</h2>
+<h3>HTML</h3>
 <form>
     <div>
         <label for="textarea1">No attributes</label><br/>
-        <textarea id="textarea1" class="auto-resize"></textarea><br/>
+        <textarea id="textarea1" class="auto-resize"></textarea>
+        <pre><code>&lt;textarea class="auto-resize">&lt;/textarea></code></pre>
     </div>
     <div>
         <label for="textarea2">rows and cols set</label><br/>
-        <textarea id="textarea2" rows="2" cols="20" class="auto-resize"></textarea><br/>
+        <textarea id="textarea2" rows="2" cols="20" class="auto-resize"></textarea>
+        <pre><code>&lt;textarea rows="2" cols="20" class="auto-resize">&lt;/textarea></code></pre>
     </div>
     <div>
         <label for="textarea3">padding and cols and rows set</label><br/>
         <textarea id="textarea3" style="padding: 10px" rows="2" cols="20" class="auto-resize"></textarea>
+        <pre><code>&lt;textarea style="padding: 10px" rows="2" cols="20" class="auto-resize">&lt;/textarea></code></pre>
     </div>
     <div>
         <label for="textarea4">width and height set</label><br/>
         <textarea id="textarea4" style="padding: 10px; width: 280px; height: 30px;" rows="2" cols="10"
                   class="auto-resize"></textarea>
+        <pre><code>&lt;textarea style="padding: 10px; width: 280px; height: 30px;" rows="2" cols="10"
+                  class="auto-resize">&lt;/textarea></code></pre>
     </div>
     <div>
         <label for="textarea5">one row initial</label><br/>
         <textarea id="textarea5" rows="1" cols="40" class="auto-resize"></textarea><br/>
+        <pre><code>&lt;textarea id="textarea5" rows="1" cols="40" class="auto-resize">&lt;/textarea></code></pre>
     </div>
 </form>
+<h3>Script</h3>
+<pre><code>&lt;script src="src/auto-resize-textarea.js">&lt;/script>
+&lt;script>
+    autoResizeTextarea(document.querySelectorAll("textarea.auto-resize"), {maxHeight: 120})
+&lt;/script>
+</code></pre>
+By <a href="https://shaack.com">shaack.com engineering</a>. License: <a href="LICENSE">MIT</a>.
+<br/><br/>
 <script src="src/auto-resize-textarea.js"></script>
+<script>
+    autoResizeTextarea(document.querySelectorAll("textarea.auto-resize"), {maxHeight: 120})
+</script>
+<br/>
 </body>
 </html>
