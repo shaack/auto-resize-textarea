@@ -17,10 +17,21 @@ var autoResizeTextarea = function (querySelector, options) {
     }
 
     function init(element) {
+        var initialDisplay = element.style.display
+        element.style.display = "block" // prevent display="none"
         element.autoResizeTextarea = {}
         element.autoResizeTextarea.initialHeight = elementHeight(element)
         element.autoResizeTextarea.initialScrollHeight = parseFloat(element.scrollHeight)
         element.style.height = element.autoResizeTextarea.initialHeight + "px"
+        if(!element.autoResizeTextarea.initialHeight) {
+            // try again, element might take longer to render
+            setTimeout(function() {
+                element.autoResizeTextarea.initialHeight = elementHeight(element)
+                element.autoResizeTextarea.initialScrollHeight = parseFloat(element.scrollHeight)
+                element.style.height = element.autoResizeTextarea.initialHeight + "px"
+            }, 500)
+        }
+        element.style.display = initialDisplay
     }
 
     function updateElement(element) {
@@ -35,5 +46,8 @@ var autoResizeTextarea = function (querySelector, options) {
         element.addEventListener("input", function () {
             updateElement(element)
         })
+        setTimeout(function() {
+            updateElement(element)
+        },100)
     }
 }
