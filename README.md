@@ -2,7 +2,7 @@
 
 Auto resizes the height of any &lt;textarea&gt;. 
 
-- No dependencies (don't needs jQuery) 
+- No dependencies (you don't need jQuery) 
 - Works with Bootstrap 
 
 ## Usage
