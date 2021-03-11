@@ -5,6 +5,14 @@ Auto resizes the height of any &lt;textarea&gt;.
 - No dependencies (you don't need jQuery) 
 - Works with Bootstrap 
 
+## Try it
+
+[Demo page](https://shaack.com/projekte/auto-resize-textarea/)
+
+# Repository 
+
+[GitHub](https://github.com/shaack/auto-resize-textarea)
+
 ## Usage
 
 ```html
@@ -12,15 +20,10 @@ Auto resizes the height of any &lt;textarea&gt;.
 
 <script src="src/auto-resize-textarea.js"></script>
 <script>
-    autoResizeTextarea(document.querySelectorAll("textarea.auto-resize"), {maxHeight: 120})
+    autoResizeTextarea(document.querySelectorAll("textarea.auto-resize"), {maxHeight: 320})
 </script>
 ```
 
-## Try and Get it
-
-- [Demo page](https://shaack.com/projekte/auto-resize-textarea/)
-- [GitHub repository](https://github.com/shaack/auto-resize-textarea) 
-
 ## Installation
 
-    npm -s @shaack/auto-resize-textarea
+npm -i @shaack/auto-resize-textarea
