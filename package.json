@@ -1,6 +1,6 @@
 {
   "name": "@shaack/auto-resize-textarea",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Auto resizing textareas, can be used with bootstrap",
   "main": "index.html",
   "scripts": {
