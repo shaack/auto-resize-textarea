@@ -1,9 +1,4 @@
 var autoResizeTextarea = function (querySelector, options) {
-
-    for (var i = 0; i < querySelector.length; i++) {
-        forEachElement(querySelector[i])
-    }
-
     var config = {
         maxHeight: Infinity
     }
@@ -11,27 +6,36 @@ var autoResizeTextarea = function (querySelector, options) {
         // noinspection JSUnfilteredForInLoop
         config[option] = options[option]
     }
-
+    for (var i = 0; i < querySelector.length; i++) {
+        forEachElement(querySelector[i])
+    }
     function elementHeight(element) {
         return parseFloat(getComputedStyle(element, null).height.replace("px", ""))
     }
 
-    function init(element) {
+    function initInternal(element) {
         var initialDisplay = element.style.display
         element.style.display = "block" // prevent display="none"
-        element.autoResizeTextarea = {}
         element.autoResizeTextarea.initialHeight = elementHeight(element)
         element.autoResizeTextarea.initialScrollHeight = parseFloat(element.scrollHeight)
+        if (element.autoResizeTextarea.initialScrollHeight > element.autoResizeTextarea.initialHeight) {
+            element.autoResizeTextarea.initialHeight = element.autoResizeTextarea.initialScrollHeight + 2
+        }
         element.style.height = element.autoResizeTextarea.initialHeight + "px"
-        if(!element.autoResizeTextarea.initialHeight) {
+        element.style.display = initialDisplay
+    }
+
+    function init(element) {
+        element.autoResizeTextarea = {}
+        initInternal(element)
+        updateElement(element)
+        if (!element.autoResizeTextarea.initialHeight) {
             // try again, element might take longer to render
-            setTimeout(function() {
-                element.autoResizeTextarea.initialHeight = elementHeight(element)
-                element.autoResizeTextarea.initialScrollHeight = parseFloat(element.scrollHeight)
-                element.style.height = element.autoResizeTextarea.initialHeight + "px"
+            setTimeout(function () {
+                initInternal(element)
+                updateElement(element)
             }, 500)
         }
-        element.style.display = initialDisplay
     }
 
     function updateElement(element) {
@@ -46,8 +50,5 @@ var autoResizeTextarea = function (querySelector, options) {
         element.addEventListener("input", function () {
             updateElement(element)
         })
-        setTimeout(function() {
-            updateElement(element)
-        },100)
     }
 }

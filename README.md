@@ -1,8 +1,8 @@
 # auto-resize-textarea
 
-Auto resizes the height of any &lt;textarea&gt;. 
+Auto resizes the height of any &lt;textarea&gt; to match the text input.
 
-- No dependencies (you don't need jQuery) 
+- No dependencies
 - Works with Bootstrap 
 
 ## Try it
