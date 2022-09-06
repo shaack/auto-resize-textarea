@@ -1,9 +1,13 @@
+/**
+ * Author and copyright: Stefan Haack (https://shaack.com)
+ * Repository: https://github.com/shaack/auto-resize-textarea
+ * License: MIT, see file 'LICENSE'
+ */
 var autoResizeTextarea = function (querySelector, options) {
     var config = {
         maxHeight: Infinity
     }
     for (var option in options) {
-        // noinspection JSUnfilteredForInLoop
         config[option] = options[option]
     }
     for (var i = 0; i < querySelector.length; i++) {
@@ -12,7 +16,6 @@ var autoResizeTextarea = function (querySelector, options) {
     function elementHeight(element) {
         return parseFloat(getComputedStyle(element, null).height.replace("px", ""))
     }
-
     function initInternal(element) {
         var initialDisplay = element.style.display
         element.style.display = "block" // prevent display="none"
@@ -24,7 +27,6 @@ var autoResizeTextarea = function (querySelector, options) {
         element.style.height = element.autoResizeTextarea.initialHeight + "px"
         element.style.display = initialDisplay
     }
-
     function init(element) {
         element.autoResizeTextarea = {}
         initInternal(element)
@@ -37,14 +39,12 @@ var autoResizeTextarea = function (querySelector, options) {
             }, 500)
         }
     }
-
     function updateElement(element) {
         element.style.height = element.autoResizeTextarea.initialHeight + "px"
         var newHeight = element.autoResizeTextarea.initialHeight + element.scrollHeight - element.autoResizeTextarea.initialScrollHeight
         newHeight = Math.max(newHeight, element.autoResizeTextarea.initialHeight)
         element.style.height = Math.min(newHeight, config.maxHeight) + "px"
     }
-
     function forEachElement(element) {
         init(element)
         element.addEventListener("input", function () {
