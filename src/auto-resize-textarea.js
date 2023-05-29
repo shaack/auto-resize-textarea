@@ -3,15 +3,15 @@
  * Repository: https://github.com/shaack/auto-resize-textarea
  * License: MIT, see file 'LICENSE'
  */
-var autoResizeTextarea = function (querySelector, options) {
+var autoResizeTextarea = function (elements, options) {
     var config = {
         maxHeight: Infinity
     }
     for (var option in options) {
         config[option] = options[option]
     }
-    for (var i = 0; i < querySelector.length; i++) {
-        forEachElement(querySelector[i])
+    for (var i = 0; i < elements.length; i++) {
+        forEachElement(elements[i])
     }
     function elementHeight(element) {
         return parseFloat(getComputedStyle(element, null).height.replace("px", ""))
