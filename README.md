@@ -28,7 +28,7 @@ Auto resizes the height of any `<textarea>` to match the text input.
 npm -i @shaack/auto-resize-textarea
 ```
 
-## More modules
+---
 
 Find more high quality modules
 on [my projects page](https://shaack.com/works).
