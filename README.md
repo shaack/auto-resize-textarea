@@ -30,6 +30,6 @@ npm -i @shaack/auto-resize-textarea
 
 ---
 
-> Find more high quality modules from [shaack.com](https://shaack.com)
+Find more high quality modules from [shaack.com](https://shaack.com)
 on [our projects page](https://shaack.com/works).
 
