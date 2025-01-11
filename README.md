@@ -1,17 +1,15 @@
 # auto-resize-textarea
 
-Auto resizes the height of any &lt;textarea&gt; to match the text input.
+Auto resizes the height of any `<textarea>` to match the text input.
 
 - No dependencies
-- Works with Bootstrap 
+- Works also with Bootstrap
 
-## Try it
+## References
 
-[Demo page](https://shaack.com/projekte/auto-resize-textarea/)
-
-# Repository 
-
-[GitHub](https://github.com/shaack/auto-resize-textarea)
+- [Demo page](https://shaack.com/projekte/auto-resize-textarea/)
+- [GitHub repository](https://github.com/shaack/auto-resize-textarea)
+- [npm package](https://www.npmjs.com/package/@shaack/auto-resize-textarea)
 
 ## Usage
 
@@ -26,4 +24,6 @@ Auto resizes the height of any &lt;textarea&gt; to match the text input.
 
 ## Installation
 
+```bash
 npm -i @shaack/auto-resize-textarea
+```
